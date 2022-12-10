@@ -1,5 +1,5 @@
 header {
-  background-color: rgb(230, 68, 9);
+  background-color: rgb(243, 231, 5);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,6 +12,7 @@ header {
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #222;
+  outline: none;
 }
 .search:focus {
   border-bottom-color: #fff;

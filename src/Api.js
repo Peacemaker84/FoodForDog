@@ -5,7 +5,7 @@ class Api {
     this.token = token;
   }
   signUp(body) {
-    // авторизация
+    // регистрация
     body.group = this.group;
     return fetch(`${this.path}/signup`, {
       method: "POST",
@@ -16,13 +16,20 @@ class Api {
     });
   }
   signIn(body) {
-    // регистрация
+    // авторизация
     return fetch(`${this.path}/signin`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(body),
+    });
+  }
+  getProducts() {
+    return fetch(`${this.path}/products`, {
+      headers: {
+        authorization: `Bearer ${this.token}`,
+      },
     });
   }
 }

@@ -19,12 +19,11 @@ a {
   grid-template-columns: repeat(4, 1fr);
   gap: 2em;
 }
-
 @media (max-width: 1260px) {
   .container > * {
     padding: 0 30px;
   }
-  .card {
+  .cards {
     grid-template-columns: repeat(3, 1fr);
   }
 }
