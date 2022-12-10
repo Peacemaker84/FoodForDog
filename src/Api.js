@@ -1,0 +1,30 @@
+class Api {
+  constructor(token) {
+    this.path = "https://api.react-learning.ru";
+    this.group = "group-8";
+    this.token = token;
+  }
+  signUp(body) {
+    // авторизация
+    body.group = this.group;
+    return fetch(`${this.path}/signup`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    });
+  }
+  signIn(body) {
+    // регистрация
+    return fetch(`${this.path}/signin`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    });
+  }
+}
+
+export { Api };
