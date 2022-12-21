@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+// Router - маршрут
+import { Routes, Route } from "react-router-dom";
 import "./style.css";
 import products from "./assets/data.json";
 
@@ -8,6 +10,8 @@ import Modal from "./components/Modal";
 
 import Home from "./pages/Home.jsx";
 import Catalog from "./pages/Catalog.jsx";
+import Profile from "./pages/Profile.jsx";
+import Product from "./pages/Product";
 
 import { Api } from "./Api";
 
@@ -19,6 +23,7 @@ const App = () => {
   const [modalActive, setModalActive] = useState(false);
   const [api, setApi] = useState(new Api(token));
   const [goods, setGoods] = useState([]);
+  console.log(user);
 
   useEffect(() => {
     console.log("Hello!");
@@ -42,6 +47,7 @@ const App = () => {
   }, [token]);
 
   useEffect(() => {
+    console.log(user);
     if (!user) {
       localStorage.removeItem("token8");
       setToken(null);
@@ -69,7 +75,18 @@ const App = () => {
           products={products}
           setModalActive={setModalActive}
         />
-        <main>{user ? <Catalog data={goods} /> : <Home data={smiles} />}</main>
+        <main>
+          {/* {user ? <Catalog data={goods} /> : <Home data={smiles} />} */}
+          <Routes>
+            <Route path="/" element={<Home data={smiles} />} />
+            <Route path="/catalog" element={<Catalog data={goods} />} />
+            <Route
+              path="/profile"
+              element={<Profile setUser={setUser} user={user} />}
+            />
+            <Route path="/catalog/:id" element={<Product />} />
+          </Routes>
+        </main>
         <Footer />
       </div>
       {/* 

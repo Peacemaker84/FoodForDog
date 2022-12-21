@@ -19,5 +19,8 @@ header {
 }
 .menu {
   display: flex;
+  align-items: center;
   gap: 1em;
+  padding-right: 78px;
+  /* padding: 0 calc(50% - 60px); */
 }

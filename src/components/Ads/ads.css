@@ -1,0 +1,24 @@
+.promo {
+  border: 1px solid #dedede;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  background-image: url("./Img/img2.jpg");
+  background-position: center;
+  background-size: contain;
+  /* background-repeat: no-repeat; */
+  align-items: flex-end;
+  /* z-index: -1; */
+}
+.promo img {
+  width: 200px;
+  /* z-index: 1; */
+}
+.promo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
