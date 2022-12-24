@@ -23,7 +23,7 @@ const App = () => {
   const [modalActive, setModalActive] = useState(false);
   const [api, setApi] = useState(new Api(token));
   const [goods, setGoods] = useState([]);
-  console.log(user);
+  const [visibleGoods, setVisibleGoods] = useState(goods);
 
   useEffect(() => {
     console.log("Hello!");
@@ -66,20 +66,25 @@ const App = () => {
     }
   }, [api]);
 
+  useEffect(() => {
+    setVisibleGoods(goods);
+  }, [goods]);
+
   return (
     <>
       <div className="container">
         <Header
           user={user}
           setUser={setUser}
-          products={products}
+          goods={goods}
+          searchGoods={setVisibleGoods}
           setModalActive={setModalActive}
         />
         <main>
           {/* {user ? <Catalog data={goods} /> : <Home data={smiles} />} */}
           <Routes>
             <Route path="/" element={<Home data={smiles} />} />
-            <Route path="/catalog" element={<Catalog data={goods} />} />
+            <Route path="/catalog" element={<Catalog data={visibleGoods} />} />
             <Route
               path="/profile"
               element={<Profile setUser={setUser} user={user} />}
