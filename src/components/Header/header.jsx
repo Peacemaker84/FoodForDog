@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Search from "../Search/search";
 import "./header.css";
+import logo from "./img/logo.svg";
+import miniLogo from "./img/ic-profile.svg";
 
 export default ({ user, setUser, goods, searchGoods, setModalActive }) => {
   // хук состояния [свойство, функция в качестве аргумента которой передается новое значение нашего свойства] = useState(аргумент - изначальное значение свойства)
@@ -26,7 +28,7 @@ export default ({ user, setUser, goods, searchGoods, setModalActive }) => {
   return (
     <header>
       <Link className="logo" to="/">
-        DogFood
+        <img src={logo} alt="" />
       </Link>
       <Search data={goods} searchGoods={searchGoods} />
       {/* <input type="search" placeholder="Поиск..." className="search" /> */}
@@ -39,11 +41,14 @@ export default ({ user, setUser, goods, searchGoods, setModalActive }) => {
           </a>
         )}
         {user && (
-          <a href="" onClick={logOut}>
+          <a href="" onClick={logOut} className="exit">
             Выйти
           </a>
         )}
       </nav>
+      <div className="mini__logo">
+        <img src={miniLogo} alt="" />
+      </div>
     </header>
   );
 };

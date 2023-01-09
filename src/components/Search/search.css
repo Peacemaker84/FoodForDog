@@ -1,19 +1,20 @@
 .search-block {
-  min-width: 300px;
+  min-width: 600px;
   width: max-content;
   display: flex;
   align-items: center;
   position: relative;
 }
+
 .search-block > input {
   flex: 1;
   height: 30px;
   box-sizing: border-box;
   padding: 6px 12px;
-  border-radius: 10px;
+  border-radius: 7px;
   border: 1px solid silver;
   font-size: 16px;
-  outline: none;
+  /* outline: none; */
 }
 .search-block > input:focus {
   border-color: yellow;
@@ -32,7 +33,9 @@
   cursor: pointer;
 }
 .search-block:hover {
+  border: 2px solid green;
   fill: yellow;
+  border-radius: 10px;
 }
 .search-block svg:hover {
   fill: yellow;
