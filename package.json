@@ -1,6 +1,6 @@
 {
   "name": "fe9-dogfood",
-  "homepage": "./",
+  "homepage": "/dogfood",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

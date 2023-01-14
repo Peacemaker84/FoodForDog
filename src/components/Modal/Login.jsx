@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import Ctx from "../../Ctx";
 
-export default ({ change, api, close, setToken }) => {
+export default ({ change, close }) => {
   const [inp1, setInp1] = useState("");
   const [inp2, setInp2] = useState("");
+
+  const { setToken, api } = useContext(Ctx);
 
   const sendForm = (e) => {
     e.preventDefault();
@@ -18,6 +21,7 @@ export default ({ change, api, close, setToken }) => {
         console.log(data);
         localStorage.setItem("user8", data.data.name);
         localStorage.setItem("token8", data.token);
+        setToken(data.token);
         setInp1("");
         setInp2("");
       });

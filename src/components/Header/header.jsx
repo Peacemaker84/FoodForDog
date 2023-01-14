@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import Search from "../Search/search";
 import "./header.css";
 import logo from "./img/logo.svg";
 import miniLogo from "./img/ic-profile.svg";
+import Ctx from "../../Ctx";
 
-export default ({ user, setUser, goods, searchGoods, setModalActive }) => {
+export default ({ goods, searchGoods, setModalActive }) => {
   // хук состояния [свойство, функция в качестве аргумента которой передается новое значение нашего свойства] = useState(аргумент - изначальное значение свойства)
   // const [user, setUser] = useState(localStorage.getItem("user8"));
 
   // let user = localStorage.getItem("user8");
+  const { user, setUser } = useContext(Ctx);
+
   const logIn = (e) => {
     e.preventDefault();
     // let name = prompt("Как вас зовут?");
