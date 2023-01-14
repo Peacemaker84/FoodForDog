@@ -13,13 +13,13 @@ export default ({ change, close }) => {
       email: inp1,
       password: inp2,
     };
-    // console.log(body);
     api
       .signIn(body)
       .then((res) => res.json())
       .then((data) => {
+        // не забыть отловить сообщение с ошибкой
         console.log(data);
-        localStorage.setItem("user8", data.data.name);
+        localStorage.setItem("user8", JSON.stringify(data.data));
         localStorage.setItem("token8", data.token);
         setToken(data.token);
         setInp1("");

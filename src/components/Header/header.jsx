@@ -6,12 +6,12 @@ import logo from "./img/logo.svg";
 import miniLogo from "./img/ic-profile.svg";
 import Ctx from "../../Ctx";
 
-export default ({ goods, searchGoods, setModalActive }) => {
+export default () => {
   // хук состояния [свойство, функция в качестве аргумента которой передается новое значение нашего свойства] = useState(аргумент - изначальное значение свойства)
   // const [user, setUser] = useState(localStorage.getItem("user8"));
 
   // let user = localStorage.getItem("user8");
-  const { user, setUser } = useContext(Ctx);
+  const { user, setUser, setModalActive } = useContext(Ctx);
 
   const logIn = (e) => {
     e.preventDefault();
@@ -33,11 +33,11 @@ export default ({ goods, searchGoods, setModalActive }) => {
       <Link className="logo" to="/">
         <img src={logo} alt="" />
       </Link>
-      <Search data={goods} searchGoods={searchGoods} />
+      <Search />
       {/* <input type="search" placeholder="Поиск..." className="search" /> */}
       <nav className="menu">
         {/* true && true */}
-        {user && <Link to="/profile">{user} </Link>}
+        {user && user.name && <Link to="/profile">{user.name} </Link>}
         {!user && (
           <a href="" onClick={logIn}>
             Войти
