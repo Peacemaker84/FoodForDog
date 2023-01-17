@@ -18,21 +18,21 @@ export default () => {
       </div>
       <div className="footer__contacts">
         <div className="contacts">
-          <p className="we__online">Мы на связи</p>
+          <p>Мы на связи</p>
           <a className="phone" href="tel:+79451111111">
-            +7 (945) 111-11-11
+            8 (945) 111-11-11
           </a>
-          <a href="dogfood@gmail.com">dogfood@gmail.com</a>
+          <a href="dogfood@mail.ru">dogfood@mail.ru</a>
         </div>
         <div className="social-media">
           <a href="#">
-            <i class="fa-brands fa-telegram"></i>
+            <i className="fa-brands fa-telegram"></i>
           </a>
           <a href="#">
-            <i class="fa-brands fa-vk"></i>
+            <i className="fa-brands fa-vk"></i>
           </a>
           <a href="#">
-            <i class="fa-brands fa-skype"></i>
+            <i className="fa-brands fa-skype"></i>
           </a>
         </div>
       </div>

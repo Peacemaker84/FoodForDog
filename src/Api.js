@@ -39,6 +39,25 @@ class Api {
       },
     });
   }
+  addProduct(body) {
+    return fetch(`${this.path}/products`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${this.token}`,
+      },
+      body: JSON.stringify(body),
+    });
+  }
+  //удаляем карточку удаленного товара
+  delProduct(id) {
+    return fetch(`${this.path}/products/${id}`, {
+      method: "DELETE",
+      headers: {
+        authorization: `Bearer ${this.token}`,
+      },
+    });
+  }
 }
 
 export { Api };

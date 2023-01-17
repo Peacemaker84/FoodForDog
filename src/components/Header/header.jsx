@@ -5,13 +5,14 @@ import "./header.css";
 import logo from "./img/logo.svg";
 import miniLogo from "./img/ic-profile.svg";
 import Ctx from "../../Ctx";
+import { PlusCircle } from "react-bootstrap-icons";
 
 export default () => {
   // хук состояния [свойство, функция в качестве аргумента которой передается новое значение нашего свойства] = useState(аргумент - изначальное значение свойства)
   // const [user, setUser] = useState(localStorage.getItem("user8"));
 
   // let user = localStorage.getItem("user8");
-  const { user, setUser, setModalActive } = useContext(Ctx);
+  const { user, setUser, setModalActive, PATH } = useContext(Ctx);
 
   const logIn = (e) => {
     e.preventDefault();
@@ -30,14 +31,19 @@ export default () => {
   };
   return (
     <header>
-      <Link className="logo" to="/">
+      <Link className="logo" to={PATH}>
         <img src={logo} alt="" />
       </Link>
       <Search />
       {/* <input type="search" placeholder="Поиск..." className="search" /> */}
       <nav className="menu">
         {/* true && true */}
-        {user && user.name && <Link to="/profile">{user.name} </Link>}
+        {user && (
+          <Link to={PATH + "add"}>
+            <PlusCircle style={{ fontSize: "20px" }} />
+          </Link>
+        )}
+        {user && user.name && <Link to={PATH + "profile"}>{user.name} </Link>}
         {!user && (
           <a href="" onClick={logIn}>
             Войти
