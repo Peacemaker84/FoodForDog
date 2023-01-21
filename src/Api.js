@@ -58,6 +58,14 @@ class Api {
       },
     });
   }
+  setLike(id, isLike) {
+    return fetch(`${this.path}/products/likes/${id}`, {
+      method: isLike ? "DELETE" : "PUT",
+      headers: {
+        autorization: `Bearer ${this.token}`,
+      },
+    });
+  }
 }
 
 export { Api };

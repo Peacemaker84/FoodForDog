@@ -17,6 +17,7 @@ import AddForm from "./pages/AddForm";
 
 import { Api } from "./Api";
 import Ctx from "./Ctx";
+import Favorites from "./pages/Favorites";
 
 const PATH = "/";
 // const PATH = "/"  - когда работаем локально
@@ -36,6 +37,7 @@ const App = () => {
   const [api, setApi] = useState(new Api(token));
   const [goods, setGoods] = useState([]);
   const [visibleGoods, setVisibleGoods] = useState(goods);
+  const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
     if (token) {
@@ -81,6 +83,12 @@ const App = () => {
 
   useEffect(() => {
     setVisibleGoods(goods);
+    setFavorites(
+      goods.filter((el) => {
+        // найти только те товары в которых св-во likes вкслючает в себя id моего пользователя
+        return el.likes && el.likes.includes(user._id);
+      })
+    );
   }, [goods]);
 
   return (
@@ -92,12 +100,14 @@ const App = () => {
         modalActive: modalActive,
         goods: goods,
         visibleGoods: visibleGoods,
+        favorites: favorites,
         setUser: setUser,
         setToken: setToken,
         setApi: setApi,
         setModalActive: setModalActive,
         setGoods: setGoods,
         setVisibleGoods,
+        setFavorites: setFavorites,
         PATH: PATH,
       }}
     >
@@ -114,6 +124,7 @@ const App = () => {
             <Route path={PATH + "profile"} element={<Profile />} />
             <Route path={PATH + "catalog/:id"} element={<Product />} />
             <Route path={PATH + "add"} element={<AddForm />} />
+            <Route path={PATH + "favorites"} element={<Favorites />} />
           </Routes>
         </main>
         <Footer />

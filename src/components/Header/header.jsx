@@ -1,18 +1,19 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import Search from "../Search/search";
 import "./header.css";
 import logo from "./img/logo.svg";
 import miniLogo from "./img/ic-profile.svg";
 import Ctx from "../../Ctx";
-import { PlusCircle } from "react-bootstrap-icons";
+import { PlusCircle, HeartFill } from "react-bootstrap-icons";
+import { Badge } from "react-bootstrap";
 
 export default () => {
   // хук состояния [свойство, функция в качестве аргумента которой передается новое значение нашего свойства] = useState(аргумент - изначальное значение свойства)
   // const [user, setUser] = useState(localStorage.getItem("user8"));
 
   // let user = localStorage.getItem("user8");
-  const { user, setUser, setModalActive, PATH } = useContext(Ctx);
+  const { user, setUser, setModalActive, PATH, favorites } = useContext(Ctx);
 
   const logIn = (e) => {
     e.preventDefault();
@@ -43,6 +44,12 @@ export default () => {
             <PlusCircle style={{ fontSize: "20px" }} />
           </Link>
         )}
+        {user && (
+          <Link to={PATH + "favorite"} className="badge-link">
+            <HeartFill style={{ fontSize: "20px" }} />
+            <Badge>{favorites.length}</Badge>
+          </Link>
+        )}
         {user && user.name && <Link to={PATH + "profile"}>{user.name} </Link>}
         {!user && (
           <a href="" onClick={logIn}>
@@ -51,7 +58,7 @@ export default () => {
         )}
         {user && (
           <a href="" onClick={logOut} className="exit">
-            Выйти
+            Выйти{" "}
           </a>
         )}
       </nav>

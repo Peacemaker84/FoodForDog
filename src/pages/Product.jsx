@@ -6,6 +6,7 @@ import Ctx from "../Ctx";
 
 export default ({}) => {
   const { id } = useParams();
+  console.log(id);
   const [product, setProduct] = useState({});
   // По id товара получаются данные о товаре для отрисовки страницы с товаром
   const { api, PATH, user, setGoods } = useContext(Ctx);
@@ -16,6 +17,7 @@ export default ({}) => {
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
+        console.log(data.reviews);
       });
   }, []);
   const btnSt = {
