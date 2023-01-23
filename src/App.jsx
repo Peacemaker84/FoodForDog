@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 // Router - маршрут
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./style.css";
-import products from "./assets/data.json";
+// import products from "./assets/data.json";
 
 import Header from "./components/Header/header";
 import Footer from "./components/Footer/footer";
@@ -11,18 +11,17 @@ import Modal from "./components/Modal";
 
 import Home from "./pages/Home.jsx";
 import Catalog from "./pages/Catalog.jsx";
-import Profile from "./pages/Profile.jsx";
+import Profile from "./pages/Profile";
 import Product from "./pages/Product";
 import AddForm from "./pages/AddForm";
+import Favorites from "./pages/Favorites";
+// import Fake from "./pages/Fake";
 
 import { Api } from "./Api";
 import Ctx from "./Ctx";
-import Favorites from "./pages/Favorites";
 
 const PATH = "/";
-// const PATH = "/"  - когда работаем локально
-// const PATH = "/dogfood";
-// const PATH = "/dogfood"  - когда выкладываем на Гитхаб
+// const PATH = "/lk8-dogfood/";
 
 const smiles = [<span>^_^</span>, "=)", "O_o", ";(", "^_0", "@_@", "–_–"];
 
@@ -52,7 +51,6 @@ const App = () => {
   }, []); // функция отработает один раз при создании компонента
 
   useEffect(() => {
-    console.log("Change token");
     setApi(new Api(token));
     let usr = localStorage.getItem("user8");
     if (usr) {
@@ -62,7 +60,6 @@ const App = () => {
   }, [token]);
 
   useEffect(() => {
-    console.log(user);
     if (!user) {
       localStorage.removeItem("token8");
       setToken(null);
@@ -80,12 +77,12 @@ const App = () => {
         });
     }
   }, [api]);
-
   useEffect(() => {
     setVisibleGoods(goods);
+
     setFavorites(
       goods.filter((el) => {
-        // найти только те товары в которых св-во likes вкслючает в себя id моего пользователя
+        // Найти только те товары, в которых свойство likes ([]) включает в себя id моего пользователя
         return el.likes && el.likes.includes(user._id);
       })
     );
@@ -106,15 +103,14 @@ const App = () => {
         setApi: setApi,
         setModalActive: setModalActive,
         setGoods: setGoods,
-        setVisibleGoods,
+        setVisibleGoods: setVisibleGoods,
         setFavorites: setFavorites,
         PATH: PATH,
       }}
     >
       <div className="wrapper">
         <Header />
-        <main>
-          {/* {user ? <Catalog data={goods} /> : <Home data={smiles} />} */}
+        <main className="py-4">
           <Routes>
             <Route path={PATH} element={<Home data={smiles} />} />
             <Route
@@ -125,7 +121,13 @@ const App = () => {
             <Route path={PATH + "catalog/:id"} element={<Product />} />
             <Route path={PATH + "add"} element={<AddForm />} />
             <Route path={PATH + "favorites"} element={<Favorites />} />
+            {/* <Route path={PATH + "fake/:n/:title"} element={<Fake/>}/> */}
           </Routes>
+          {/* <ul>
+                        {smiles.map((el,i) => <li key={el}>
+                            <Link to={`${PATH}fake/${i+1}/${el}`}>{el}</Link>
+                        </li>)}
+                    </ul> */}
         </main>
         <Footer />
       </div>

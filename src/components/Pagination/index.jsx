@@ -10,7 +10,7 @@ export default ({ hook }) => {
     pages.push(i + 1);
   }
   return (
-    <div class="page-container">
+    <div className="page-container">
       <button
         className="btn page"
         disabled={current === 1}

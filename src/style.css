@@ -6,6 +6,9 @@ a {
   text-decoration: none;
   color: inherit;
 }
+a:hover {
+  color: inherit;
+}
 .wrapper {
   min-height: 100vh;
   display: grid;
@@ -22,6 +25,7 @@ a {
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding: 20px 0;
+  align-items: stretch;
 }
 @media (max-width: 1260px) {
   .wrapper > * {
@@ -40,9 +44,6 @@ a {
   height: 100%;
   justify-content: center;
 }
-/* .empty-block>*:not(svg) {
-  font-size: 1rem;
-} */
 .empty-block svg {
   font-size: 4rem;
   fill: #dedede;

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
 export default (data, cnt) => {
-  /* 
-    ["", "", "", ""]
-    cnt = 2   желаемое кол-во страниц
-    pages = 2
+  /*
+        ["", "", "", "", ""]
+        cnt = 2
+        pages = 3
     */
-  const [currentPage, setCurrentPage] = useState(1); // 1 страница по умолчанию
+  const [currentPage, setCurrentPage] = useState(1);
   const maxPage = Math.ceil(data.length / cnt);
 
   const next = () => {
@@ -21,9 +21,8 @@ export default (data, cnt) => {
     setCurrentPage(page);
   };
   const setPageData = () => {
-    // рисуем данные только на этой странице
-    // 0-11, 12-23, 23-35
-    let start = (currentPage - 1) * cnt; // массив 0-23 значений
+    // 0 - 11, 12 - 23, 24 - 35
+    let start = (currentPage - 1) * cnt;
     let end = start + cnt;
     return data.slice(start, end);
   };

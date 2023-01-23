@@ -5,9 +5,8 @@ export default ({ change, close }) => {
   const [inp1, setInp1] = useState("");
   const [inp2, setInp2] = useState("");
   const [inp3, setInp3] = useState("");
-  const [testPwd, setTestPwd] = useState("false");
-
-  const { setToken, api, setUser } = useContext(Ctx);
+  const [testPwd, setTestPwd] = useState(true);
+  const { api, setToken, setUser } = useContext(Ctx);
 
   const checkPwd = (val, type = "main") => {
     type === "main" ? setInp2(val) : setInp3(val);
@@ -19,6 +18,7 @@ export default ({ change, close }) => {
       }
     }
   };
+
   const sendForm = (e) => {
     e.preventDefault();
     const body = {
@@ -30,7 +30,6 @@ export default ({ change, close }) => {
       .signUp(body)
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
         if (!data.err) {
           api
             .signIn(body)
@@ -39,14 +38,15 @@ export default ({ change, close }) => {
               localStorage.setItem("user8", JSON.stringify(data.data));
               localStorage.setItem("token8", data.token);
               setToken(data.token);
-              setUser(data.data.name);
+              setUser(data.data);
             });
           setInp1("");
           setInp2("");
           setInp3("");
           close(false);
         } else {
-          alert(data.message); // Отобразить уведомление об ошибке
+          alert(data.message);
+          // Отобразить уведомление с ошибкой
         }
       });
   };
@@ -59,27 +59,23 @@ export default ({ change, close }) => {
         value={inp1}
         required
         onChange={(e) => {
-          {
-            setInp1(e.target.value);
-          }
+          setInp1(e.target.value);
         }}
       />
       <input
         type="password"
-        placeholder="Введите ваш пароль"
+        placeholder="Пароль"
         value={inp2}
         onChange={(e) => {
-          {
-            checkPwd(e.target.value);
-          }
+          checkPwd(e.target.value);
         }}
       />
       <input
         type="password"
-        placeholder="Повторите ваш пароль"
+        placeholder="Повторить пароль"
         value={inp3}
         onChange={(e) => {
-          checkPwd(e.target.value, "secondary");
+          checkPwd(e.target.value, "check");
         }}
       />
       <button className="btn" type="submit" disabled={testPwd}>

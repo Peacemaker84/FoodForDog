@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import Card from "../components/Card/index";
+import Card from "../components/Card";
 import { Link } from "react-router-dom";
 import { EmojiFrown } from "react-bootstrap-icons";
 import Ctx from "../Ctx";
-import Pagination from "../components/Pagination";
 import usePagination from "../hooks/usePagination";
+import Pagination from "../components/Pagination";
 
 export default () => {
   const { favorites, PATH } = useContext(Ctx);

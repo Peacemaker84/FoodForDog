@@ -17,15 +17,15 @@ export default ({ change, close }) => {
       .signIn(body)
       .then((res) => res.json())
       .then((data) => {
-        // не забыть отловить сообщение с ошибкой
+        // Не забыть отловить сообщение с ошибкой
         console.log(data);
         localStorage.setItem("user8", JSON.stringify(data.data));
         localStorage.setItem("token8", data.token);
         setToken(data.token);
         setInp1("");
         setInp2("");
+        close(false);
       });
-    close(false);
   };
 
   return (
@@ -36,19 +36,15 @@ export default ({ change, close }) => {
         value={inp1}
         required
         onChange={(e) => {
-          {
-            setInp1(e.target.value);
-          }
+          setInp1(e.target.value);
         }}
       />
       <input
         type="password"
-        placeholder="Введите ваш пароль"
+        placeholder="Пароль"
         value={inp2}
         onChange={(e) => {
-          {
-            setInp2(e.target.value);
-          }
+          setInp2(e.target.value);
         }}
       />
       <button className="btn" type="submit">

@@ -49,7 +49,6 @@ class Api {
       body: JSON.stringify(body),
     });
   }
-  //удаляем карточку удаленного товара
   delProduct(id) {
     return fetch(`${this.path}/products/${id}`, {
       method: "DELETE",
@@ -62,7 +61,7 @@ class Api {
     return fetch(`${this.path}/products/likes/${id}`, {
       method: isLike ? "DELETE" : "PUT",
       headers: {
-        autorization: `Bearer ${this.token}`,
+        authorization: `Bearer ${this.token}`,
       },
     });
   }
