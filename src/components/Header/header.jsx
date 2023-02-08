@@ -5,7 +5,7 @@ import "./header.css";
 import logo from "./img/logo.svg";
 import miniLogo from "./img/ic-profile.svg";
 import Ctx from "../../Ctx";
-import { PlusCircle, HeartFill } from "react-bootstrap-icons";
+import { PlusCircle, HeartFill, Basket3 } from "react-bootstrap-icons";
 import { Badge } from "react-bootstrap";
 
 export default () => {
@@ -13,7 +13,8 @@ export default () => {
   // const [user, setUser] = useState(localStorage.getItem("user8"));
 
   // let user = localStorage.getItem("user8");
-  const { user, setUser, setModalActive, PATH, favorites } = useContext(Ctx);
+  const { user, setUser, setModalActive, PATH, favorites, basket } =
+    useContext(Ctx);
 
   const logIn = (e) => {
     e.preventDefault();
@@ -45,26 +46,27 @@ export default () => {
           </Link>
         )}
         {user && (
-          <Link to={PATH + "favorite"} className="badge-link">
+          <Link to={PATH + "favorites"} className="badge-link">
             <HeartFill style={{ fontSize: "20px" }} />
             <Badge>{favorites.length}</Badge>
           </Link>
         )}
-        {user && user.name && <Link to={PATH + "profile"}>{user.name} </Link>}
+
+        {user && (
+          <Link to={PATH + "basket"} className="badge-link">
+            <Basket3 style={{ fontSize: "20px" }} />
+            <Badge bg="light" text="dark">
+              {basket.reduce((acc, el) => acc + el.cnt, 0)}
+            </Badge>
+          </Link>
+        )}
+        {user && user.name && <Link to={PATH + "profile"}>{user.name}</Link>}
         {!user && (
           <a href="" onClick={logIn}>
             Войти
           </a>
         )}
-        {user && (
-          <a href="" onClick={logOut} className="exit">
-            Выйти{" "}
-          </a>
-        )}
       </nav>
-      <div className="mini__logo">
-        <img src={miniLogo} alt="" />
-      </div>
     </header>
   );
 };

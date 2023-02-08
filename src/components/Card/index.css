@@ -41,3 +41,6 @@
 .card > .btn {
   width: max-content;
 }
+/* .card:hover {
+  border: 2px solid green;
+} */

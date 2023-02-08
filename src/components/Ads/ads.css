@@ -38,6 +38,7 @@
 
 .second-block__img {
   max-width: 160px;
+  background: transparent;
 }
 
 .ad-block__item {
