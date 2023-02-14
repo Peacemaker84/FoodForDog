@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import "./style.css";
-import Ctx from "../../Ctx";
+import Ctx from "../../context/Ctx";
 
 import Signup from "./Signup";
 import Login from "./Login";

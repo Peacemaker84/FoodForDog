@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import Ctx from "../../Ctx";
+import Ctx from "../../context/Ctx";
 
 export default ({ change, close }) => {
   const [inp1, setInp1] = useState("");

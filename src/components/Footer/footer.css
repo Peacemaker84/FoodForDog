@@ -1,31 +1,24 @@
 footer {
   background-color: rgb(220, 211, 39);
-  /* display: grid;
-  grid-template-columns: repeat(2, 1fr); */
+  color: #000;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 20px 100px;
 }
 
-.footer__logo {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 20px 0 10px 10px;
+.footer__logo img {
+  padding-bottom: 50px;
 }
 
 .footer__copy {
-  /* font-size: 1em; */
+  font-size: 0.9em;
 }
-.footer__contacts {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding-right: 10px;
-  padding-top: 20px;
-}
+
 .contacts {
   display: flex;
   flex-direction: column;
+  gap: 7px;
 }
 
 .contacts p {
@@ -35,11 +28,10 @@ footer {
 .phone {
   font-size: 1.3em;
   font-weight: 600;
-  margin-bottom: 12px;
 }
 
 .social-media {
-  margin-bottom: 10px;
+  margin-top: 20px;
 }
 
 .social-media a {
@@ -48,9 +40,6 @@ footer {
   opacity: 0.6;
 }
 
-.fa-brands {
-  color: blue;
-}
 @media (max-width: 540px) {
   footer {
     flex-direction: column;
@@ -65,7 +54,7 @@ footer {
   }
   .footer__contacts {
     order: 1;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   .contacts p,
   .contacts a {

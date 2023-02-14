@@ -1,16 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
+import logo from "../../assets/img/logo.svg";
+import { PATH } from "../../utils/constants";
+
 import "./footer.css";
-import logo from "../Header/img/logo.svg";
 
 export default () => {
   const year = new Date().getFullYear();
+
   return (
     <footer>
-      {/* <div className="container__footer"> */}
       <div className="footer__logo">
-        <Link to="/">
-          <img src={logo} />
+        <Link to={PATH}>
+          <img src={logo} alt="Логотип сайта" />
         </Link>
         <div className="footer__copy">
           ©️ {year} "Интернет-магазин DogFood.ru"
@@ -19,26 +22,23 @@ export default () => {
       <div className="footer__contacts">
         <div className="contacts">
           <p>Мы на связи</p>
-          <a className="phone" href="tel:+79451111111">
-            8 (945) 111-11-11
+          <a className="phone" href="tel:+79450000000">
+            8 (945) 000-00-00
           </a>
-          <a href="dogfood@mail.ru">dogfood@mail.ru</a>
+          <a href="mailto:dogfood.ru@mail.ru">dogfood.ru@mail.ru</a>
         </div>
         <div className="social-media">
-          <a href="#">
-            <i className="fa-brands fa-telegram"></i>
-          </a>
-          <a href="#">
-            <i className="fa-brands fa-vk"></i>
-          </a>
-          <a href="#">
-            <i className="fa-brands fa-skype"></i>
-          </a>
+          <Link>
+            <i className="fa-brands fa-telegram" />
+          </Link>
+          <Link>
+            <i className="fa-brands fa-vk" />
+          </Link>
+          <Link>
+            <i className="fa-brands fa-skype" />
+          </Link>
         </div>
       </div>
-      {/* </div> */}
     </footer>
   );
 };
-//©️ => &copy
-// &nbsp - полный пробел

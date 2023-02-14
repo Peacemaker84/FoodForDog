@@ -1,42 +1,48 @@
 import React, { useState, useContext } from "react";
-import "./search.css";
 import { useNavigate } from "react-router-dom";
-import { ReactComponent as SearchImg } from "./img/img1.svg";
-import { ReactComponent as CloseImg } from "./img/img2.svg";
-import Ctx from "../../Ctx";
+
+import { ReactComponent as SearchImg } from "./img/magnifying-glass-solid.svg";
+import { ReactComponent as CloseImg } from "./img/circle-xmark-regular.svg";
+import Ctx from "../../context/Ctx";
+import { PATH } from "../../utils/constants";
+
+import "./search.css";
 
 export default () => {
-  // data => goods
-  // searchGoods => setVisibleGoods
   const navigate = useNavigate();
-  const { goods, setVisibleGoods, PATH } = useContext(Ctx);
-  const [text, updateText] = useState("");
-  const [searchData, setSearchData] = useState(goods);
+  const { goods, setVisibleGoods, visibleGoods } = useContext(Ctx);
+  const [text, setText] = useState("");
+
   const clearSearch = () => {
-    updateText("");
-    setSearchData(goods);
+    setText("");
     setVisibleGoods(goods);
   };
+
   const search = (e) => {
     navigate(PATH + "catalog");
-    updateText(e.target.value);
+    setText(e.target.value);
     let arr = goods.filter((el) =>
       el.name.toLowerCase().includes(e.target.value.toLowerCase())
     );
-    setSearchData(arr);
     setVisibleGoods(arr);
   };
+
   return (
     <div className="search-block">
-      <input placeholder="Поиск..." value={text} onChange={search} />
+      <input
+        placeholder="Поиск..."
+        value={text}
+        onChange={search}
+        maxLength="50"
+      />
       <button>
         {text ? <CloseImg onClick={clearSearch} /> : <SearchImg />}
       </button>
       {text && (
         <div className="search-result">
           По запросу <b>{text}</b>&nbsp;
-          {searchData.length > 0
-            ? `найдено ${searchData.length} товаров`
+          {visibleGoods.length > 0
+            ? `найдено ${visibleGoods.length} товаров`
             : "не найдено ни одного товара"}
         </div>
       )}
