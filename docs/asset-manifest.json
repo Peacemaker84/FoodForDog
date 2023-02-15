@@ -1,27 +1,23 @@
 {
   "files": {
-    "main.css": "./static/css/main.fc5335de.css",
-    "main.js": "./static/js/main.b82b3b05.js",
-    "static/media/presentFood.jpg": "./static/media/presentFood.5a35f9a02031824a085f.jpg",
-    "static/media/puppy.png": "./static/media/puppy.f51a05ec35f3d32bd7ce.png",
-    "static/media/cannedFood.png": "./static/media/cannedFood.ad71d09c5c4d60089b13.png",
-    "static/media/dryFood.jpg": "./static/media/dryFood.9beae903ab1d179557d6.jpg",
-    "static/media/goForest.png": "./static/media/goForest.735e3b12b25f6b6c0fc9.png",
-    "static/media/tastyFood.jpg": "./static/media/tastyFood.2066887603d45c9d2267.jpg",
-    "static/media/vitamin.png": "./static/media/vitamin.bb4738c8196832174a69.png",
-    "static/media/pedigree.png": "./static/media/pedigree.9a2856018599f22eb80b.png",
-    "static/media/allForDog.png": "./static/media/allForDog.d659cf192673ae0e17aa.png",
-    "static/media/dog-food-mixed.png": "./static/media/dog-food-mixed.6b957031054338b61797.png",
-    "static/media/logo.svg": "./static/media/logo.451d3e7a122ed0d35f9fbc7c206aeef3.svg",
-    "static/media/ic-profile.svg": "./static/media/ic-profile.88459b659812d74c083cb437414a35d1.svg",
-    "index.html": "./index.html",
-    "static/media/img2.svg": "./static/media/img2.8ef6e0a127f37e5c70a1e4bb4cb92f32.svg",
-    "static/media/img1.svg": "./static/media/img1.06e310dbfbf3ab21da478aef6c037c14.svg",
-    "main.fc5335de.css.map": "./static/css/main.fc5335de.css.map",
-    "main.b82b3b05.js.map": "./static/js/main.b82b3b05.js.map"
+    "main.css": "/dogfood/static/css/main.cf019843.css",
+    "main.js": "/dogfood/static/js/main.33a1935e.js",
+    "static/media/present.jpg": "/dogfood/static/media/present.c8c340cb9aae06f50257.jpg",
+    "static/media/dog-food-wet.png": "/dogfood/static/media/dog-food-wet.14ca8eafb8934f4eaa75.png",
+    "static/media/deer-antlers.png": "/dogfood/static/media/deer-antlers.1806e11762310334cf7a.png",
+    "static/media/butter.png": "/dogfood/static/media/butter.3924230e8115b064403a.png",
+    "static/media/dog-toy.png": "/dogfood/static/media/dog-toy.e6cdbb8c43d36fe44431.png",
+    "static/media/dog-food-mixed.png": "/dogfood/static/media/dog-food-mixed.6b957031054338b61797.png",
+    "static/media/no-image.png": "/dogfood/static/media/no-image.0229ffbf04c314310f9f.png",
+    "static/media/logo.svg": "/dogfood/static/media/logo.451d3e7a122ed0d35f9fbc7c206aeef3.svg",
+    "index.html": "/dogfood/index.html",
+    "static/media/circle-xmark-regular.svg": "/dogfood/static/media/circle-xmark-regular.8ef6e0a127f37e5c70a1e4bb4cb92f32.svg",
+    "static/media/magnifying-glass-solid.svg": "/dogfood/static/media/magnifying-glass-solid.06e310dbfbf3ab21da478aef6c037c14.svg",
+    "main.cf019843.css.map": "/dogfood/static/css/main.cf019843.css.map",
+    "main.33a1935e.js.map": "/dogfood/static/js/main.33a1935e.js.map"
   },
   "entrypoints": [
-    "static/css/main.fc5335de.css",
-    "static/js/main.b82b3b05.js"
+    "static/css/main.cf019843.css",
+    "static/js/main.33a1935e.js"
   ]
 }

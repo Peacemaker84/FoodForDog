@@ -1,20 +1,20 @@
 import React from "react";
 
 import presentPic from "./img/present.jpg";
-import "./firstAdBlock.css";
+import "./firstStyle.css";
 
 export default () => {
   return (
-    <div className="first-block">
-      <div>
+    <a href="" className="first-block">
+      <div className="first-block__item">
         <h2>
           Подарок за
           <br />
           первый заказ!
         </h2>
-        <p>Сухой корм "Мясное изобилие"</p>
+        <p>Универсальный сухой корм для собак</p>
       </div>
       <img src={presentPic} />
-    </div>
+    </a>
   );
 };

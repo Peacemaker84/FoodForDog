@@ -1,8 +1,15 @@
-.second-block {
+/* .ad-block {
+  margin-bottom: 20px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 2fr 3fr;
   gap: 20px;
 }
+
+.second-block {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+} */
 
 .second-ad-img {
   max-width: 120px;

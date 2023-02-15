@@ -19,7 +19,7 @@
   outline: none;
 }
 .search-block > input:focus {
-  border-color: rgb(220, 211, 39);
+  border-color: green;
 }
 
 .search-block > button {
@@ -39,7 +39,7 @@
 }
 
 .search-block svg:hover {
-  fill: rgb(220, 211, 39);
+  fill: green;
 }
 
 .search-result {

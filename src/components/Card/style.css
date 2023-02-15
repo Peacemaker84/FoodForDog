@@ -4,8 +4,8 @@ h3 {
 }
 
 .card {
-  min-width: 250px;
-  height: 500px;
+  min-width: 180px;
+  height: 380px;
   box-shadow: 0 0 5px #2226;
   border-radius: 1em;
   padding: 1em;
@@ -16,6 +16,7 @@ h3 {
   gap: 0.5em;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .card:hover {
@@ -51,7 +52,7 @@ h3 {
 }
 
 .card__pic {
-  height: 180px;
+  height: 160px;
   display: flex;
   justify-content: center;
   padding: 10px;
