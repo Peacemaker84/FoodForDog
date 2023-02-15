@@ -1,6 +1,6 @@
 import React from "react";
 
-import presentPic from "./img/present.jpg";
+import presentPic from "./Img/present.jpg";
 import "./firstStyle.css";
 
 export default () => {

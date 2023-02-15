@@ -1,0 +1,12 @@
+.btnCatalog {
+  margin: 15px 0 12px 0;
+  padding: 10px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(243, 231, 5);
+}
+.btnCatalog:hover {
+  background-color: aquamarine;
+  color: green;
+}

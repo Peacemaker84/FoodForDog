@@ -5,9 +5,13 @@
   background: rgb(225, 143, 11);
   border-radius: 20px;
   padding: 15px;
-  color: #fff;
+  color: #000;
   box-sizing: border-box;
   margin-top: 5px;
+}
+
+.first-block:hover {
+  color: #fff;
 }
 
 .first-block h2 {

@@ -1,15 +1,24 @@
-/* .ad-block {
+/* .add-block {
   margin-bottom: 20px;
   display: grid;
   grid-template-columns: 2fr 3fr;
   gap: 20px;
-}
+  color: #000;
+} */
 
 .second-block {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-} */
+}
+
+.second-block h3 {
+  color: #000;
+}
+
+.second-block:hover {
+  color: #fff;
+}
 
 .second-ad-img {
   max-width: 120px;

@@ -1,14 +1,14 @@
 import React from "react";
 
-import vitamin from "./img/vitamin.png";
-import allForDog from "./img/allForDog.png";
-import pedigree from "./img/pedigree.png";
+import vitamin from "./Img/vitamin.png";
+import allForDog from "./Img/allForDog.png";
+import pedigree from "./Img/pedigree.png";
 
 import "./secondStyle.css";
 
 export default () => {
   return (
-    <div className="ad-block second-block">
+    <div className="add-block second-block">
       <a href="" className="ad-block__item green">
         <div>
           <h3>Витамины для собак всех возрастов</h3>
