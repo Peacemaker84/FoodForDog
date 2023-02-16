@@ -15,7 +15,7 @@ export default ({ change, close }) => {
     };
     api
       .signIn(body)
-      .then((res) => res.json())
+      // .then((res) => res.json())
       .then((data) => {
         // Не забыть отловить сообщение с ошибкой
         console.log(data);

@@ -32,7 +32,7 @@ export default () => {
     api
       .addProduct(body) // добавляем товар на сервер
       // получаем ответ от сервера и преобразовываем его в объект
-      .then((res) => res.json())
+      // .then((res) => res.json())
       // получаем даные, что ответ положительный
       .then((data) => {
         console.log(data);

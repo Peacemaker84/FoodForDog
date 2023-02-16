@@ -28,12 +28,12 @@ export default ({ change, close }) => {
     console.log(body);
     api
       .signUp(body)
-      .then((res) => res.json())
+      // .then((res) => res.json())
       .then((data) => {
         if (!data.err) {
           api
             .signIn(body)
-            .then((res) => res.json())
+            // .then((res) => res.json())
             .then((data) => {
               localStorage.setItem("user8", JSON.stringify(data.data));
               localStorage.setItem("token8", data.token);

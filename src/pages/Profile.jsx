@@ -26,7 +26,7 @@ export default () => {
         name: name,
         about: text,
       })
-      .then((res) => res.json())
+      // .then((res) => res.json())
       .then((data) => {
         console.log(data);
         setUser(data);
@@ -38,7 +38,7 @@ export default () => {
   const updImg = () => {
     api
       .updUser({ avatar: img }, true)
-      .then((res) => res.json())
+      // .then((res) => res.json())
       .then((data) => {
         console.log(data);
         setUser(data);

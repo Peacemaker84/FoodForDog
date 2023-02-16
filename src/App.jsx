@@ -81,13 +81,13 @@ const App = () => {
     }
   }, [api]);
 
-  useEffect(() => {
-    setFavorites(
-      goods.filter((el) => {
-        return el.likes && el.likes.includes(user._id);
-      })
-    );
-  }, [goods]);
+  // useEffect(() => {
+  //   setFavorites(
+  //     goods.filter((el) => {
+  //       return el.likes && el.likes.includes(user._id);
+  //     })
+  //   );
+  // }, [goods]);
 
   useEffect(() => {
     console.log(visibleGoods.length);
