@@ -21,7 +21,6 @@ export default ({ fromPage }) => {
       {fromPage === "bask" && (
         <>
           <span>В корзине нет товаров</span>
-          <p>Добавьте товар, нажав кнопку "Купить" в карточке товара</p>
           <Link to={PATH + "catalog"} className="product__btn-card">
             В каталог
           </Link>

@@ -116,32 +116,6 @@ export default () => {
                 В корзину
               </button>
             </div>
-
-            <div className="product__about">
-              <Truck className="about-icon" />
-              <div className="about-block__info">
-                <p>Доставка по всему миру!</p>
-                <p>
-                  Доставка курьером - <span className="bold">от 399 руб</span>
-                </p>
-                <p>
-                  Доставка в пункт выдачи -{" "}
-                  <span className="bold">от 199 руб</span>
-                </p>
-              </div>
-            </div>
-            <div className="product__about">
-              <Check2Circle className="about-icon check-circle" />
-
-              <div className="about-block__info">
-                <p>Гарантия качества</p>
-                <p>
-                  Если вам не понравилось качество нашей продукции, мы вернем
-                  деньги, либо сделаем всё возможное, чтобы удовлетворить ваши
-                  нужды
-                </p>
-              </div>
-            </div>
           </div>
         </div>
 

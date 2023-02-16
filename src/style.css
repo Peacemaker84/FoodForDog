@@ -17,16 +17,13 @@ a:hover {
 .wrapper > * {
   padding: 0 calc(50% - 600px);
 }
-.cards {
-  /* display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2em; */
+/* .cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2fr, 1fr);
   gap: 20px;
   padding: 20px 0;
   align-items: stretch;
-}
+} */
 @media (max-width: 1260px) {
   .wrapper > * {
     padding: 0 30px;

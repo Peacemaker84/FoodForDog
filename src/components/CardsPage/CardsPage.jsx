@@ -2,7 +2,7 @@ import React from "react";
 
 import Card from "../Card/Card";
 
-import "./style.css";
+import "./styles.css";
 
 export default ({ data }) => {
   const flag = "true";
