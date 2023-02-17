@@ -23,11 +23,11 @@ export default () => {
     setGds(arr);
   }, [basket, goods]);
 
-  useEffect(() => {
-    if (basket.length === 0) {
-      localStorage.removeItem("basket");
-    }
-  });
+  // useEffect(() => {
+  //   if (basket.length === 0) {
+  //     localStorage.removeItem("basket8");
+  //   }
+  // });
 
   return (
     <div className="basket">

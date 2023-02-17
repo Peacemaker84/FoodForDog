@@ -30,26 +30,29 @@ for (let i = 0; i < 6; ) {
 }
 
 const App = () => {
-  let usr = localStorage.getItem("user");
+  let usr = localStorage.getItem("user8");
   if (usr) {
     usr = JSON.parse(usr);
   }
 
   const [user, setUser] = useState(usr);
-  const [token, setToken] = useState(localStorage.getItem("token"));
+  const [token, setToken] = useState(localStorage.getItem("token8"));
   const [modalActive, setModalActive] = useState(false);
   const [api, setApi] = useState(new Api(token));
   const [goods, setGoods] = useState([]);
   const [visibleGoods, setVisibleGoods] = useState(goods);
   const [favorites, setFavorites] = useState([]);
   const [basket, setBasket] = useState(
-    localStorage.getItem("basket")
-      ? JSON.parse(localStorage.getItem("basket"))
+    localStorage.getItem("basket8")
+      ? JSON.parse(localStorage.getItem("basket8"))
       : []
   );
 
   useEffect(() => {
+    console.log(1);
     if (token) {
+      console.log(2);
+      // загрузить данные с сервера
       api.getProducts().then((data) => {
         setGoods(data.products);
       });
@@ -57,7 +60,7 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    let usr = localStorage.getItem("user");
+    let usr = localStorage.getItem("user8");
     setApi(new Api(token));
     if (usr) {
       usr = JSON.parse(usr);
@@ -67,12 +70,13 @@ const App = () => {
 
   useEffect(() => {
     if (!user) {
-      localStorage.removeItem("token");
+      localStorage.removeItem("token8");
       setToken(null);
     }
   }, [user]);
 
   useEffect(() => {
+    console.log(3);
     if (token) {
       api.getProducts().then((data) => {
         setVisibleGoods(data.products);
@@ -81,20 +85,23 @@ const App = () => {
     }
   }, [api]);
 
-  // useEffect(() => {
-  //   setFavorites(
-  //     goods.filter((el) => {
-  //       return el.likes && el.likes.includes(user._id);
-  //     })
-  //   );
-  // }, [goods]);
+  useEffect(() => {
+    console.log(4);
+    console.log(goods.length);
+    setFavorites(
+      goods.filter((el) => {
+        // Найти только те товары, в которых свойство likes ([]) включает в себя id моего пользователя
+        return el.likes && el.likes.includes(user._id);
+      })
+    );
+  }, [goods]);
 
   useEffect(() => {
-    console.log(visibleGoods.length);
+    // console.log(visibleGoods.length);
   }, [visibleGoods]);
 
   useEffect(() => {
-    localStorage.setItem("basket", JSON.stringify(basket));
+    localStorage.setItem("basket8", JSON.stringify(basket));
   }, [basket]);
 
   return (

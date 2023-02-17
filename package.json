@@ -1,7 +1,7 @@
 {
   "name": "dogfood",
   "version": "0.1.0",
-  "homepage": "/dogfood/",
+  "homepage": "./",
   "private": true,
   "dependencies": {
     "bootstrap": "^5.2.3",

@@ -1,5 +1,7 @@
-const onResponce = (res) =>
-  res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
+const onResponce = (res) => {
+  console.log(res);
+  return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
+};
 
 class Api {
   constructor(token) {
